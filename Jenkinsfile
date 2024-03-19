@@ -1,11 +1,6 @@
 pipeline{
     agent any
     stages{
-        stage("Clean working directory"){
-            steps{
-                   cleanws()
-            }
-        }
         stage("git Checkout")
         {
            steps
