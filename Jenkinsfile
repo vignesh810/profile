@@ -23,10 +23,10 @@ pipeline{
         stage("Docker Build & Push to ECR"){
             steps{
                sh 'aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 499932433650.dkr.ecr.us-east-1.amazonaws.com'
-               sh 'docker build -t vprofile:$BUILD_NUMBER .'
-               sh 'docker tag vprofile:$BUILD_NUMBER 499932433650.dkr.ecr.us-east-1.amazonaws.com/eks-project/vprofile:"$BUILD_NUMBER"'
-               sh 'docker push 499932433650.dkr.ecr.us-east-1.amazonaws.com/eks-project/vprofile:"$BUILD_NUMBER"'
-               sh 'docker logout 753634426646.dkr.ecr.us-east-1.amazonaws.com/vprofile'
+               sh 'docker build -t vprofile:latest .'
+               sh 'docker tag vprofile:latest 499932433650.dkr.ecr.us-east-1.amazonaws.com/eks-project:vprofile-latest'
+               sh 'docker push 499932433650.dkr.ecr.us-east-1.amazonaws.com/eks-project:vprofile-latest'
+               sh 'docker logout 753634426646.dkr.ecr.us-east-1.amazonaws.com/eks-project'
 
             }
         }
