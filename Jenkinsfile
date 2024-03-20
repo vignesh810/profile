@@ -22,7 +22,7 @@ pipeline{
         }   
         stage("build docker image"){
             steps{
-                sh 'docker build -t vprofile:$BUILD_ID .'
+                sh 'sudo docker build -t vprofile:$BUILD_ID .'
                 sh 'echo "Created Docker image"'
             }
         }
