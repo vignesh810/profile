@@ -20,9 +20,9 @@ pipeline{
                 sh 'mvn clean install'
             }
         }   
-        stage("build docker image"){
+        stage("Docker Build & Push to ECR"){
             steps{
-                sh 'docker build -t vprofile:$BUILD_ID .'
+                sh './ecr_build'
                 sh 'echo "Created Docker image"'
             }
         }
