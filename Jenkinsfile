@@ -22,7 +22,7 @@ pipeline{
         }   
         stage("Docker Build & Push to ECR"){
             steps{
-                sh './ecr_build'
+                sh './ecr_build.sh'
                 sh 'echo "Created Docker image"'
             }
         }
