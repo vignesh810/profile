@@ -29,7 +29,16 @@ pipeline{
                sh 'docker logout 753634426646.dkr.ecr.us-east-1.amazonaws.com/eks-project'
 
             }
+            
         }
+        stage("EKS DEployment"){
+            steps{
+                sh 'kubectl get po'
+                sh  'kubectl apply -f .
+            }
+        }
+
+        
         
     }    
     
