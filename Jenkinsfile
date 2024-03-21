@@ -34,7 +34,7 @@ pipeline{
         stage("EKS DEployment"){
             steps{
                 sh 'kubectl get po'
-                sh  'kubectl apply -f .
+                sh  'kubectl apply -f .'
             }
         }
 
